@@ -1,6 +1,6 @@
 # DPscan version 1.0
-     #Demons Ports Scanner
-A tool designed to scan the open ports on any ip address
+     Demons Ports Scanner
+A tool designed to scan the open ports on any host
 
 
 installer:
