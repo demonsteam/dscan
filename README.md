@@ -10,7 +10,7 @@ installer:
 
 
 
-cd DPscan
+    cd DPscan
 
 
 
