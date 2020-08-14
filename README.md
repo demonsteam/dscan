@@ -7,10 +7,8 @@ installer:
   
 
      git clone https://github.com/demonsteam/DPscan.git
-
-
-
-    cd DPscan
+     cd DPscan
+     python dpscan.py 
 
 
 
