@@ -1,6 +1,6 @@
 # Dscan version 1.2
      Demons Scanner
-A tool designed to scan the open ports on any host
+A tool designed to scan any host
 
 
 installer:
