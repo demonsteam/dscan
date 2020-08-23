@@ -10,7 +10,7 @@ sudo git clone https://github.com/demonsteam/dscan.git
 echo " Updating Your Dscan .."
 clear
 cd dscan
-chmod +x dscan
+sudo chmod +x dscan
 sudo mv dscan /usr/bin
 echo " Updating Your Dscan ..."
 clear
