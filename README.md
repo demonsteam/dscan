@@ -6,7 +6,7 @@ A tool designed to scan the open ports on any host
 installer:
   
 
-     git clone https://github.com/demonsteam/DPscan.git
+     git clone https://github.com/demonsteam/dscan.git
      cd dscan
      chmod +x install
      ./install
