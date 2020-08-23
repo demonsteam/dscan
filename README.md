@@ -9,7 +9,7 @@ installer:
      git clone https://github.com/demonsteam/DPscan.git
      cd dscan
      chmod +x install
-     ./install
+     ./install.sh
      dscan --help
 
 
