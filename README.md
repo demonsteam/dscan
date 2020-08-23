@@ -8,7 +8,8 @@ installer:
 
      git clone https://github.com/demonsteam/DPscan.git
      cd dscan
-     ./installer
+     chmod +x install
+     ./install
      dscan --help
 
 
