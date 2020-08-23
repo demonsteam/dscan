@@ -1,0 +1,22 @@
+#!/usr/bin/bash
+echo " <<<    Dscan Update Started    >>>"
+sleep 1
+cd /usr/bin
+sudo rm dscan
+echo "Updating Your Dscan"
+clear
+cd 
+sudo git clone https://github.com/demonsteam/dscan.git
+echo " Updating Your Dscan .."
+clear
+cd dscan
+sudo mv dscan /usr/bin
+echo " Updating Your Dscan ..."
+clear
+cd ..
+rm -r dscan
+echo " Updating Your Dscan ...."
+clear
+echo "  <<<< dscan tool has been successfully updated >>>>"
+
+

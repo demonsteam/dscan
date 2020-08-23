@@ -1,0 +1,66 @@
+#!/usr/bin/python3
+import sys 
+import socket
+import time
+from datetime import datetime
+import argparse as ap
+usage =  """             Dscan Tool 
+     Scanning Tool Created By Demons Cyber Security Team
+     Usage:
+       gather url information : dscan -u <target_url>
+
+       scan for open ports: dscan -r <target_host>
+       to update dscan : dscan-update
+       -h or --help for more"""
+parser = ap.ArgumentParser()
+parser.add_argument("-u","--url",help="target_url")
+parser.add_argument("-r",dest="host",help="scanning_target_host")
+args, leftovers = parser.parse_known_args()
+if args.url is not None:
+    s = socket.gethostbyaddr('{0}'.format(args.url))
+    z = s[2]
+    print("~" * 50)
+    print(" Gathering Information about {0}".format(args.url))
+    print("~" * 50)
+    time.sleep(0.5)
+    print("=" * 50)
+    print("Host name:{0}".format(s[0]))
+    print("Server IP Address:{0}".format(z[0]))
+    print("=" * 50)
+elif args.host is not None:
+    target = socket.gethostbyname(args.host)
+    print("~" * 50)
+    print("   Demons Ports Scanning")
+    print("Scanning for open ports on : {0}".format(target))  
+    print("Time started: "+str(datetime.now()))
+    print("~" * 50)
+    current_time = time.time()
+    try:
+        a = 0
+        for port in range(0,1000):
+            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)#Address Family INET session 
+            socket.setdefaulttimeout(1)
+            result = s.connect_ex((target,port))
+            if result == 0:
+                ser = socket.getservbyport(port)
+                print("port :({0}) service: ({1}) [tcp] state: open  ".format(port, ser))
+                a+=1
+        if a == 0:
+            print("There is no open ports on :{0}".format(target))
+        now_time = time.time()
+        time_taken = now_time - current_time
+        print("~" * 50)
+        print("\n All Ports Has been Scanned in : {0} sec".format(time_taken))
+    except KeyboardInterrupt: #keyboard Interrupt
+        print("\nExiting program.")
+        sys.exit()
+    except socket.gaierror: #sokcet session gaierror
+        print("Hostname could not be resolved")
+        sys.exit()
+    except socket.error:
+        print("there is no open ports on host"+target)
+        sys.exit()
+else:
+    print(usage)
+    exit(0)
+
