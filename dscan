@@ -12,7 +12,8 @@ usage =  """             Dscan Tool
        scan for open ports: dscan -r <target_host>
        to update dscan : dscan-update
        -h or --help for more"""
-parser = ap.ArgumentParser()
+parser = ap.ArgumentParser(prog="Dscan")
+parser.add_argument('--version', action='version', version='%(prog)s 1.2')
 parser.add_argument("-u","--url",help="target_url")
 parser.add_argument("-r",dest="host",help="scanning_target_host")
 args, leftovers = parser.parse_known_args()
