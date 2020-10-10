@@ -55,7 +55,7 @@ elif args.host is not None:
     except KeyboardInterrupt: #keyboard Interrupt
         print("\nExiting program.")
         sys.exit()
-    except socket.gaierror: #sokcet session gaierror
+    except socket.gaierror: #socket session gaierror
         print("Hostname could not be resolved")
         sys.exit()
     except socket.error:
